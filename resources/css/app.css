@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ FIX: Import Google Fonts (hapus spasi ekstra setelah "Inter") */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ✅ Base Styles */
+@layer base {
+  body {
+    @apply font-sans text-navy bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* ✅ Custom Components */
+@layer components {
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-md border-b border-navy/5;
+  }
+
+  .btn-gold {
+    @apply bg-gold hover:bg-gold-light text-white px-6 py-3 rounded-full transition-all duration-300 font-medium shadow-lg shadow-gold/20;
+  }
+
+  .btn-outline {
+    @apply border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3 rounded-full transition-all duration-300 font-medium;
+  }
+}
+
+/* ✅ TAMBAHAN 1: Smooth Scroll untuk Anchor Link (One-Page Navigation) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ TAMBAHAN 2: Offset agar section tidak tertutup fixed navbar */
+section {
+  scroll-margin-top: 80px; /* Sesuaikan dengan tinggi navbar Anda */
+}
+
+/* ✅ TAMBAHAN 3: Utility untuk line-clamp (jika pakai di Blog/Excerpt) */
+@supports (-webkit-line-clamp: 2) {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
