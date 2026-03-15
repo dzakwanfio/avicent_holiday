@@ -4,10 +4,9 @@ import { useState } from 'react';
 
 // 🎯 Mock Data (Nanti diganti dengan data dari backend)
 const mockContact = {
-  whatsapp: '6281234567890', // Format: 628xxx (tanpa + atau 0)
-  email: 'info@avicentholiday.com',
-  address: 'Jl. Raya Wisata No. 123, Jakarta Selatan, Indonesia',
-  google_maps_embed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.273673756475!2d106.816666!3d-6.225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTMnMzAuMCJTIDEwNsKwNDknMDAuMCJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid',
+  whatsapp: '6285788889995',
+  address: 'Jl. Basuki Rahmad, rahmat, Kec. Kartoharjo, Kota Madiun, Jawa Timur 63119',
+  google_maps_embed:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1449.169742286128!2d111.532121349136!3d-7.610060663631086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bf33f6c73733%3A0x9ffb433be8c8b2ca!2sAvicent%20Holiday%20Transport%20Persewaan%20Bus%20dan%20Hiace!5e0!3m2!1sid!2sid!4v1773560857349!5m2!1sid!2sid",
 };
 
 export default function Contact() {
@@ -95,34 +94,6 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-              
-              <div className="flex gap-6 items-start">
-                <div className="w-12 h-12 bg-navy text-gold rounded-xl flex items-center justify-center shrink-0">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-navy mb-1">Email</h4>
-                  <a 
-                    href={`mailto:${mockContact.email}`}
-                    className="text-navy/60 hover:text-gold transition-colors"
-                  >
-                    {mockContact.email}
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            {/* Social Media */}
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-navy/5 text-navy rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all duration-300">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-navy/5 text-navy rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all duration-300">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-navy/5 text-navy rounded-full flex items-center justify-center hover:bg-gold hover:text-white transition-all duration-300">
-                <Twitter size={20} />
-              </a>
             </div>
           </motion.div>
 
