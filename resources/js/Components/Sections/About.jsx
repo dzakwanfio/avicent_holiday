@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MapPin, Award, Target, Eye, Users, Heart } from 'lucide-react';
+import { MapPin, ShieldCheck, Target, Eye, Users, Heart } from 'lucide-react';
 import { mockAbout } from '@/utils/mockData';
 
 export default function About() {
@@ -9,10 +9,13 @@ export default function About() {
     <section id="about" className="py-24 bg-navy text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       {/* Decorative Elements */}
@@ -20,9 +23,8 @@ export default function About() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* Section Header - Centered */}
-        <motion.div 
+        {/* Section Header */}
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,23 +34,25 @@ export default function About() {
           <span className="text-gold font-bold uppercase tracking-widest text-xs mb-4 block">
             Tentang Kami
           </span>
+
           <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
             {about.company_name}
           </h2>
-          <p className="text-3xl md:text-4xl text-gold italic font-serif mb-6">
+
+          <p className="text-2xl md:text-3xl text-gold italic font-serif mb-6">
             {about.brand_name}
           </p>
-          <div className="flex items-center justify-center gap-2 text-gold/60">
+
+          <div className="flex items-center justify-center gap-2 text-gold/70">
             <MapPin size={18} />
             <span className="text-sm">{about.location}, Jawa Timur</span>
           </div>
         </motion.div>
 
-        {/* Main Content - Two Columns */}
+        {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          
-          {/* Left Column: Profil & Deskripsi */}
-          <motion.div 
+          {/* Left Column */}
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -63,26 +67,37 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold">Profil Perusahaan</h3>
               </div>
-              <p className="text-white/70 leading-relaxed">
+
+              <p className="text-white/75 leading-relaxed">
                 {about.profile}
               </p>
             </div>
 
-            {/* Deskripsi Usaha */}
+            {/* Komitmen Kami */}
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center">
-                  <Award size={24} className="text-gold" />
+                  <ShieldCheck size={24} className="text-gold" />
                 </div>
-                <h3 className="text-xl font-bold">Deskripsi Usaha</h3>
+                <h3 className="text-xl font-bold">Komitmen Kami</h3>
               </div>
-              <p className="text-white/70 leading-relaxed">
+
+              <p className="text-white/75 leading-relaxed">
                 {about.description}
               </p>
             </div>
+
+            {/* Closing Statement */}
+            {about.closing && (
+              <div className="bg-gradient-to-r from-gold/15 to-gold/5 backdrop-blur-sm p-6 rounded-2xl border border-gold/20">
+                <p className="text-white/90 leading-relaxed italic">
+                  {about.closing}
+                </p>
+              </div>
+            )}
           </motion.div>
 
-          {/* Right Column: Visi */}
+          {/* Right Column - Visi */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,6 +111,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold font-serif">Visi Kami</h3>
               </div>
+
               <p className="text-white/90 leading-relaxed text-lg italic">
                 {about.vision}
               </p>
@@ -122,7 +138,7 @@ export default function About() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
                 className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 group"
               >
@@ -130,9 +146,14 @@ export default function About() {
                   <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
                     <Target size={20} className="text-gold" />
                   </div>
+
                   <div>
-                    <h4 className="text-base font-bold mb-2 text-white">{item.title}</h4>
-                    <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
+                    <h4 className="text-base font-bold mb-2 text-white">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-white/65 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -153,7 +174,7 @@ export default function About() {
               <Heart size={24} className="text-gold" />
               <h4 className="text-xl font-bold text-gold">Pengalaman Layanan</h4>
             </div>
-            <p className="text-white/80 leading-relaxed">{about.experience}</p>
+            <p className="text-white/85 leading-relaxed">{about.experience}</p>
           </motion.div>
 
           <motion.div
@@ -166,8 +187,8 @@ export default function About() {
             <h4 className="text-xl font-bold mb-4">Wilayah Operasional</h4>
             <div className="flex flex-wrap gap-2">
               {about.operational_areas.map((area, idx) => (
-                <span 
-                  key={idx} 
+                <span
+                  key={idx}
                   className="text-xs bg-gold/20 text-gold px-4 py-2 rounded-full border border-gold/30 hover:bg-gold/30 transition-colors cursor-default"
                 >
                   {area}
@@ -176,7 +197,6 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

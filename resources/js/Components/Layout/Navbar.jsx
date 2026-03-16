@@ -26,8 +26,8 @@ export default function Navbar() {
     { name: 'Beranda', href: '#home' },
     { name: 'Tentang Kami', href: '#about' },
     { name: 'Layanan', href: '#services' },
-    { name: 'Armada', href: '#armada' },
     { name: 'Keunggulan', href: '#why-us' },
+    { name: 'Armada', href: '#armada' },
     { name: 'Dokumentasi', href: '#portfolio' },
     { name: 'Kontak', href: '#contact' },
   ];

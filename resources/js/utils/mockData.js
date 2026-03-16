@@ -8,15 +8,17 @@ export const mockContact = {
 };
 
 export const mockAbout = {
-  company_name: "PT AVICENT INDO UTAMA",
-  brand_name: "Avicent Holiday",
+  company_name: "Avicent Holiday",
+  brand_name: "Transport & Tour Pariwisata",
   location: "Madiun",
-  profile: `Avicent Holiday hadir di Kota Madiun sebagai penyedia jasa transportasi dan layanan tour pariwisata yang terpercaya. Sebagai kota yang berkembang pesat dan menjadi jalur penghubung penting di Jawa Timur, Madiun memiliki potensi besar dalam bidang perjalanan wisata.`,
+  profile: `Avicent Holiday hadir di Kota Madiun sebagai penyedia jasa transportasi dan layanan tour pariwisata yang terpercaya. Sebagai kota yang berkembang pesat dan menjadi jalur penghubung penting di Jawa Timur, Madiun memiliki potensi besar dalam bidang perjalanan wisata, baik untuk kebutuhan rekreasi keluarga, study tour sekolah, perjalanan religi, hingga kunjungan instansi.`,
   
-  description: `Melihat tingginya kebutuhan masyarakat akan layanan perjalanan yang aman, nyaman, dan profesional, Avicent Holiday berkomitmen menghadirkan solusi transportasi pariwisata yang modern dan berkualitas. Dengan armada bus pariwisata yang terawat, fasilitas lengkap, serta didukung oleh tim yang berpengalaman, kami siap memberikan pengalaman perjalanan yang berkesan bagi setiap pelanggan.`,
-  
+  description: `Melihat tingginya kebutuhan masyarakat akan layanan perjalanan yang aman, nyaman, dan profesional, Avicent Holiday berkomitmen menghadirkan solusi transportasi pariwisata yang modern dan berkualitas. Dengan armada bus pariwisata yang terawat, fasilitas lengkap, serta didukung oleh tim yang berpengalaman, kami siap memberikan pengalaman perjalanan yang berkesan bagi setiap pelanggan. Lebih dari sekadar transportasi, kami ingin menjadi mitra perjalanan yang dapat diandalkan, dengan pelayanan ramah, harga yang kompetitif, serta komitmen untuk selalu mengutamakan kepuasan pelanggan.`,
+
+  closing: `Kami percaya, perjalanan wisata bukan hanya tentang destinasi, tetapi juga tentang kenyamanan dan kebersamaan yang tercipta selama perjalanan. Dengan semangat tersebut, Avicent Holiday hadir untuk memberikan layanan terbaik dan menjadi pilihan utama masyarakat dalam merencanakan perjalanan wisata yang menyenangkan dan tak terlupakan.`,
+
   vision: "Menjadi biro perjalanan bus pariwisata terdepan di Indonesia yang terpercaya, profesional, dan mengutamakan kenyamanan serta keselamatan pelanggan dalam setiap perjalanan.",
-  
+
   mission: [
     {
       title: "Layanan Berkualitas",
@@ -43,10 +45,10 @@ export const mockAbout = {
       description: "Berperan aktif dalam memajukan pariwisata Indonesia dengan mendukung perjalanan yang edukatif, ramah lingkungan, dan berbudaya."
     }
   ],
-  
-  experience: "Berpengalaman melayani berbagai kebutuhan perjalanan wisata, study tour, ziarah religi, outing perusahaan, dan acara keluarga di Madiun dan seluruh Jawa Timur.",
-  
-  operational_areas: ["Madiun", "Jawa Timur", "Jawa Tengah", "Yogyakarta", "Jawa Barat", "Jakarta", "Seluruh Jawa & Bali"],
+
+  experience: "Melayani kebutuhan perjalanan wisata keluarga, study tour sekolah, ziarah religi, outing perusahaan, dan kunjungan instansi dengan armada yang nyaman, aman, dan terawat.",
+
+  operational_areas: ["Madiun", "Jawa Timur", "Jawa Tengah", "Yogyakarta", "Jawa Barat", "Jakarta", "Jawa & Bali"],
 };
 
 export const mockBenefits = [
