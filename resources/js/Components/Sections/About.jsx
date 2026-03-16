@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import {
-  MapPin,
   ShieldCheck,
   Eye,
   Users,
+  Target,
 } from 'lucide-react';
 import { mockAbout, mockVehicles } from '@/utils/mockData';
 
@@ -33,7 +33,7 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* HEADING ONLY */}
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -56,9 +56,9 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* CONTENT: LEFT CARDS + RIGHT IMAGE GRID */}
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-start mb-20">
-          {/* LEFT CARDS */}
+        {/* Top Content */}
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-start">
+          {/* LEFT COLUMN */}
           <motion.div
             className="grid gap-6"
             initial={{ opacity: 0, y: 20 }}
@@ -115,97 +115,106 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE GRID - sejajar dengan cards kiri */}
+          {/* RIGHT COLUMN */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4 lg:gap-5 self-start"
+            className="self-start"
           >
-            {/* Left stack */}
-            <div className="space-y-4 pt-12">
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] border-4 border-white/10 shadow-2xl bg-white/5">
-                <img
-                  src={imageOne}
-                  alt="Armada Avicent Holiday"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-4 md:p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 pt-10">
+                  <div className="rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-white/5">
+                    <img
+                      src={imageOne}
+                      alt="Armada Avicent Holiday"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-              <div className="bg-gold rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center">
-                <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
-                  100%
-                </span>
-                <span className="text-white/90 text-xs uppercase tracking-[0.18em] font-bold">
-                  Terpercaya
-                </span>
-              </div>
-            </div>
+                  <div className="bg-gold rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center">
+                    <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
+                      100%
+                    </span>
+                    <span className="text-white/90 text-xs uppercase tracking-[0.18em] font-bold">
+                      Terpercaya
+                    </span>
+                  </div>
+                </div>
 
-            {/* Right stack */}
-            <div className="space-y-4">
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center backdrop-blur-sm">
-                <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
-                  24/7
-                </span>
-                <span className="text-white/70 text-xs uppercase tracking-[0.18em] font-bold">
-                  Dukungan
-                </span>
-              </div>
+                <div className="space-y-4">
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center backdrop-blur-sm">
+                    <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
+                      24/7
+                    </span>
+                    <span className="text-white/70 text-xs uppercase tracking-[0.18em] font-bold">
+                      Dukungan
+                    </span>
+                  </div>
 
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] border-4 border-white/10 shadow-2xl bg-white/5">
-                <img
-                  src={imageTwo}
-                  alt="Perjalanan Avicent Holiday"
-                  className="w-full h-full object-cover"
-                />
+                  <div className="rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-white/5">
+                    <img
+                      src={imageTwo}
+                      alt="Perjalanan Avicent Holiday"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom cards */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-gold/20 to-gold/10 p-8 rounded-3xl border border-gold/25"
-          >
-            <h4 className="text-xl font-bold text-gold mb-4">
-              Pengalaman Layanan
-            </h4>
-            <p className="text-white/85 leading-relaxed text-justify">
-              {about.experience}
-            </p>
-          </motion.div>
+        {/* Mission Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 mb-10"
+        >
+          <div className="text-center mb-12">
+            <span className="text-gold text-xs uppercase tracking-[0.25em] font-semibold block mb-3">
+              Nilai Perusahaan
+            </span>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <MapPin size={22} className="text-gold" />
-              <h4 className="text-xl font-bold">Wilayah Operasional</h4>
-            </div>
+            <h3 className="text-3xl md:text-4xl font-bold font-serif mb-4">
+              Misi Kami
+            </h3>
 
-            <div className="flex flex-wrap gap-2">
-              {about.operational_areas.map((area, idx) => (
-                <span
-                  key={idx}
-                  className="text-xs bg-gold/20 text-gold px-4 py-2 rounded-full border border-gold/30 hover:bg-gold/30 transition-colors cursor-default"
-                >
-                  {area}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+            <div className="w-20 h-[3px] bg-gold mx-auto rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {about.mission.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
+                    <Target size={20} className="text-gold" />
+                  </div>
+
+                  <div>
+                    <h4 className="text-base font-bold mb-2 text-white">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-white/65 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
