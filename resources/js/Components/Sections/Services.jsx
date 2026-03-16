@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Bus, Map, Users, Calendar, ArrowRight } from 'lucide-react';
-import { Link } from '@inertiajs/react';
 
 export default function Services() {
   const services = [
@@ -34,9 +33,17 @@ export default function Services() {
     <section id="services" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-gold font-bold uppercase tracking-widest text-xs mb-4 block">Layanan Kami</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">Solusi Perjalanan <span className="text-gold italic">Lengkap</span></h2>
-          <p className="text-navy/60">Kami berkomitmen memberikan pengalaman terbaik melalui berbagai layanan transportasi dan wisata yang disesuaikan dengan kebutuhan Anda.</p>
+          <span className="text-gold font-bold uppercase tracking-widest text-xs mb-4 block">
+            Layanan Kami
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+            Solusi Perjalanan <span className="text-gold italic">Lengkap</span>
+          </h2>
+
+          <p className="text-navy/60">
+            Kami berkomitmen memberikan pengalaman terbaik melalui berbagai layanan transportasi dan wisata yang disesuaikan dengan kebutuhan Anda.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -52,10 +59,15 @@ export default function Services() {
               <div className="w-16 h-16 bg-navy/5 text-gold rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-navy mb-4">{service.title}</h3>
+
+              <h3 className="text-xl font-bold text-navy mb-4">
+                {service.title}
+              </h3>
+
               <p className="text-sm text-navy/60 mb-6 leading-relaxed">
                 {service.description}
               </p>
+
               <ul className="space-y-2 mb-8">
                 {service.features.map((feature, fIndex) => (
                   <li key={fIndex} className="text-xs text-navy/70 flex items-center gap-2">
@@ -64,10 +76,14 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <Link href="/#contact" className="text-gold font-bold text-sm flex items-center gap-2 group/link">
+
+              <a href="#contact" className="text-gold font-bold text-sm flex items-center gap-2 group/link">
                 Pesan Sekarang
-                <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-              </Link>
+                <ArrowRight
+                  size={16}
+                  className="group-hover/link:translate-x-1 transition-transform"
+                />
+              </a>
             </motion.div>
           ))}
         </div>

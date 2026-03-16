@@ -13,7 +13,7 @@ export const mockAbout = {
   location: "Madiun",
   profile: `Avicent Holiday hadir di Kota Madiun sebagai penyedia jasa transportasi dan layanan tour pariwisata yang terpercaya. Sebagai kota yang berkembang pesat dan menjadi jalur penghubung penting di Jawa Timur, Madiun memiliki potensi besar dalam bidang perjalanan wisata, baik untuk kebutuhan rekreasi keluarga, study tour sekolah, perjalanan religi, hingga kunjungan instansi.`,
   
-  description: `Melihat tingginya kebutuhan masyarakat akan layanan perjalanan yang aman, nyaman, dan profesional, Avicent Holiday berkomitmen menghadirkan solusi transportasi pariwisata yang modern dan berkualitas. Dengan armada bus pariwisata yang terawat, fasilitas lengkap, serta didukung oleh tim yang berpengalaman, kami siap memberikan pengalaman perjalanan yang berkesan bagi setiap pelanggan. Lebih dari sekadar transportasi, kami ingin menjadi mitra perjalanan yang dapat diandalkan, dengan pelayanan ramah, harga yang kompetitif, serta komitmen untuk selalu mengutamakan kepuasan pelanggan.`,
+  description: `Avicent Holiday berkomitmen menghadirkan solusi transportasi pariwisata yang modern dan berkualitas. Dengan armada bus pariwisata yang terawat, fasilitas lengkap, serta didukung oleh tim yang berpengalaman, kami siap memberikan pengalaman perjalanan yang berkesan bagi setiap pelanggan.`,
 
   closing: `Kami percaya, perjalanan wisata bukan hanya tentang destinasi, tetapi juga tentang kenyamanan dan kebersamaan yang tercipta selama perjalanan. Dengan semangat tersebut, Avicent Holiday hadir untuk memberikan layanan terbaik dan menjadi pilihan utama masyarakat dalam merencanakan perjalanan wisata yang menyenangkan dan tak terlupakan.`,
 
@@ -82,11 +82,6 @@ export const mockBenefits = [
     title: "Pelayanan Profesional",
     description: "Tim Avicent Holiday selalu siap memberikan layanan ramah, tepat waktu, dan sigap dalam membantu kebutuhan pelanggan selama perjalanan."
   },
-  {
-    icon: "MapPin",
-    title: "Dukung Pariwisata Lokal",
-    description: "Dengan memilih Avicent Holiday, pelanggan turut serta mendukung perkembangan pariwisata di Madiun dan sekitarnya."
-  }
 ];
 
 export const mockVehicles = [

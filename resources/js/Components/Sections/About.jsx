@@ -1,180 +1,185 @@
 import { motion } from 'motion/react';
-import { MapPin, ShieldCheck, Target, Eye, Users, Heart } from 'lucide-react';
-import { mockAbout } from '@/utils/mockData';
+import {
+  MapPin,
+  ShieldCheck,
+  Eye,
+  Users,
+} from 'lucide-react';
+import { mockAbout, mockVehicles } from '@/utils/mockData';
 
 export default function About() {
   const about = mockAbout;
 
+  const imageOne = mockVehicles?.[0]?.photo
+    ? `/${mockVehicles[0].photo}`
+    : 'https://picsum.photos/seed/avicent-about-1/600/800';
+
+  const imageTwo = mockVehicles?.[1]?.photo
+    ? `/${mockVehicles[1].photo}`
+    : 'https://picsum.photos/seed/avicent-about-2/600/800';
+
   return (
-    <section id="about" className="py-24 bg-navy text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }}
-        />
+    <section
+      id="about"
+      className="py-24 bg-navy text-white overflow-hidden relative"
+    >
+      {/* Background grid lines */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <div className="grid grid-cols-6 md:grid-cols-12 h-full">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="border-r border-white h-full" />
+          ))}
+        </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
+        {/* HEADING ONLY */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="w-full max-w-2xl text-left mb-8 md:mb-10"
         >
-          <span className="text-gold font-bold uppercase tracking-widest text-xs mb-4 block">
+          <span className="text-gold font-bold uppercase tracking-[0.22em] text-xs mb-5 block">
             Tentang Kami
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">
-            {about.company_name}
+          <h2 className="text-[2.6rem] md:text-[4.3rem] leading-[1.05] font-bold font-serif tracking-tight text-white mb-3">
+            PT AVICENT INDO
+            <br />
+            UTAMA
           </h2>
 
-          <p className="text-2xl md:text-3xl text-gold italic font-serif mb-6">
-            {about.brand_name}
+          <p className="text-gold/80 italic font-serif text-[2rem] md:text-[3rem] leading-none">
+            Avicent Holiday
           </p>
-
-          <div className="flex items-center justify-center gap-2 text-gold/70">
-            <MapPin size={18} />
-            <span className="text-sm">{about.location}, Jawa Timur</span>
-          </div>
         </motion.div>
 
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          {/* Left Column */}
+        {/* CONTENT: LEFT CARDS + RIGHT IMAGE GRID */}
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-start mb-20">
+          {/* LEFT CARDS */}
           <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            className="grid gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
             {/* Profil Perusahaan */}
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center">
-                  <Users size={24} className="text-gold" />
+            <div className="bg-white/[0.045] backdrop-blur-sm p-8 md:p-10 rounded-[22px] border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center shrink-0">
+                  <Users size={22} className="text-gold" />
                 </div>
-                <h3 className="text-xl font-bold">Profil Perusahaan</h3>
+                <h3 className="text-[1.45rem] md:text-[1.75rem] font-bold font-serif">
+                  Profil Perusahaan
+                </h3>
               </div>
 
-              <p className="text-white/75 leading-relaxed">
+              <p className="text-white/75 text-[1rem] md:text-[1.05rem] leading-8 md:leading-9 text-justify">
                 {about.profile}
               </p>
             </div>
 
             {/* Komitmen Kami */}
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center">
-                  <ShieldCheck size={24} className="text-gold" />
+            <div className="bg-white/[0.045] backdrop-blur-sm p-8 md:p-10 rounded-[22px] border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center shrink-0">
+                  <ShieldCheck size={22} className="text-gold" />
                 </div>
-                <h3 className="text-xl font-bold">Komitmen Kami</h3>
+                <h3 className="text-[1.45rem] md:text-[1.75rem] font-bold font-serif">
+                  Komitmen Kami
+                </h3>
               </div>
 
-              <p className="text-white/75 leading-relaxed">
+              <p className="text-white/75 text-[1rem] md:text-[1.05rem] leading-8 md:leading-9 text-justify">
                 {about.description}
               </p>
             </div>
 
-            {/* Closing Statement */}
-            {about.closing && (
-              <div className="bg-gradient-to-r from-gold/15 to-gold/5 backdrop-blur-sm p-6 rounded-2xl border border-gold/20">
-                <p className="text-white/90 leading-relaxed italic">
-                  {about.closing}
-                </p>
-              </div>
-            )}
-          </motion.div>
-
-          {/* Right Column - Visi */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="h-full bg-gradient-to-br from-gold/20 to-gold/5 backdrop-blur-sm p-10 rounded-3xl border border-gold/20 flex flex-col justify-center">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-gold rounded-xl flex items-center justify-center">
-                  <Eye size={28} className="text-navy" />
+            {/* Visi Kami */}
+            <div className="bg-gradient-to-r from-white/[0.05] to-gold/[0.06] backdrop-blur-sm p-8 md:p-10 rounded-[22px] border border-gold/20 shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center shrink-0">
+                  <Eye size={22} className="text-gold" />
                 </div>
-                <h3 className="text-2xl font-bold font-serif">Visi Kami</h3>
+                <h3 className="text-[1.45rem] md:text-[1.75rem] font-bold font-serif">
+                  Visi Kami
+                </h3>
               </div>
 
-              <p className="text-white/90 leading-relaxed text-lg italic">
+              <p className="text-white/90 text-[1rem] md:text-[1.05rem] leading-8 md:leading-9 italic font-semibold text-justify">
                 {about.vision}
               </p>
             </div>
           </motion.div>
+
+          {/* RIGHT IMAGE GRID - sejajar dengan cards kiri */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 gap-4 lg:gap-5 self-start"
+          >
+            {/* Left stack */}
+            <div className="space-y-4 pt-12">
+              <div className="rounded-2xl overflow-hidden aspect-[3/4] border-4 border-white/10 shadow-2xl bg-white/5">
+                <img
+                  src={imageOne}
+                  alt="Armada Avicent Holiday"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="bg-gold rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center">
+                <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
+                  100%
+                </span>
+                <span className="text-white/90 text-xs uppercase tracking-[0.18em] font-bold">
+                  Terpercaya
+                </span>
+              </div>
+            </div>
+
+            {/* Right stack */}
+            <div className="space-y-4">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center shadow-xl min-h-[120px] flex flex-col items-center justify-center backdrop-blur-sm">
+                <span className="text-white text-4xl md:text-5xl font-extrabold leading-none mb-2">
+                  24/7
+                </span>
+                <span className="text-white/70 text-xs uppercase tracking-[0.18em] font-bold">
+                  Dukungan
+                </span>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden aspect-[3/4] border-4 border-white/10 shadow-2xl bg-white/5">
+                <img
+                  src={imageTwo}
+                  alt="Perjalanan Avicent Holiday"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Mission Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold font-serif mb-4">Misi Kami</h3>
-            <div className="w-24 h-1 bg-gold mx-auto rounded-full" />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {about.mission.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/30 transition-colors">
-                    <Target size={20} className="text-gold" />
-                  </div>
-
-                  <div>
-                    <h4 className="text-base font-bold mb-2 text-white">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-white/65 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Experience & Operational Areas */}
+        {/* Bottom cards */}
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-gold/20 to-gold/10 p-8 rounded-3xl border border-gold/30"
+            className="bg-gradient-to-br from-gold/20 to-gold/10 p-8 rounded-3xl border border-gold/25"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <Heart size={24} className="text-gold" />
-              <h4 className="text-xl font-bold text-gold">Pengalaman Layanan</h4>
-            </div>
-            <p className="text-white/85 leading-relaxed">{about.experience}</p>
+            <h4 className="text-xl font-bold text-gold mb-4">
+              Pengalaman Layanan
+            </h4>
+            <p className="text-white/85 leading-relaxed text-justify">
+              {about.experience}
+            </p>
           </motion.div>
 
           <motion.div
@@ -184,7 +189,11 @@ export default function About() {
             viewport={{ once: true }}
             className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
           >
-            <h4 className="text-xl font-bold mb-4">Wilayah Operasional</h4>
+            <div className="flex items-center gap-3 mb-4">
+              <MapPin size={22} className="text-gold" />
+              <h4 className="text-xl font-bold">Wilayah Operasional</h4>
+            </div>
+
             <div className="flex flex-wrap gap-2">
               {about.operational_areas.map((area, idx) => (
                 <span

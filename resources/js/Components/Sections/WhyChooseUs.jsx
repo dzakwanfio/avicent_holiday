@@ -25,6 +25,7 @@ const iconMap = {
 export default function WhyChooseUs() {
   const benefits = mockBenefits;
 
+
   return (
     <section id="why-us" className="py-24 bg-navy text-white relative overflow-hidden">
       {/* Background pattern */}
@@ -88,7 +89,7 @@ export default function WhyChooseUs() {
                   {item.title}
                 </h4>
 
-                <p className="text-sm text-white/65 leading-relaxed">
+                <p className="text-sm text-white/65 leading-relaxed text-justify">
                   {item.description}
                 </p>
               </motion.div>
