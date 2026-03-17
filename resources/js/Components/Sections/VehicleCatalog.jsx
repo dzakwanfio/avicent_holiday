@@ -3,17 +3,15 @@ import { motion } from 'motion/react';
 import VehicleCard from '@/Components/UI/VehicleCard';
 import { mockVehicles } from '@/utils/mockData';
 
-export default function VehicleCatalog() {
-  // 🔄 Nanti ganti dengan data dari backend:
-  // const { vehicles } = usePage().props;
-  const vehicles = mockVehicles;
+export default function VehicleCatalog({ vehicles }) {
+  const displayVehicles = vehicles || [];
 
   return (
     <section id="armada" className="py-24 bg-white relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* 📌 Header Section */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +31,7 @@ export default function VehicleCatalog() {
 
         {/* 🚐 Grid Katalog */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {vehicles.map((vehicle, index) => (
+          {displayVehicles.map((vehicle, index) => (
             <motion.div
               key={vehicle.id}
               initial={{ opacity: 0, y: 30 }}
@@ -47,15 +45,15 @@ export default function VehicleCatalog() {
         </div>
 
         {/* 📞 CTA Button */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="btn-gold inline-flex items-center gap-2"
           >
             Konsultasi Kebutuhan Armada

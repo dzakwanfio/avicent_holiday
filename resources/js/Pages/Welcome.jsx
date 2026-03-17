@@ -19,7 +19,7 @@ import Contact from '@/Components/Sections/Contact';
 // ✅ UI Components
 import WhatsAppButton from '@/Components/UI/WhatsAppbutton';      // ✅ Fix casing: Whatsappbutton → WhatsAppButton
 
-export default function Welcome() {
+export default function Welcome({ services, vehicles, clients, projects, testimonials, posts }) {
   // Progress bar scroll animation
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -31,33 +31,33 @@ export default function Welcome() {
   return (
     <>
       <Head title="Avicent Holiday - Sewa Bus & Travel Terpercaya" />
-      
+
       <div className="relative">
         {/* 📊 Progress Bar */}
-        <motion.div 
-          className="fixed top-0 left-0 right-0 h-1 bg-gold z-[60] origin-left" 
-          style={{ scaleX }} 
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-gold z-[60] origin-left"
+          style={{ scaleX }}
         />
-        
+
         {/* 🧭 Navbar */}
         <Navbar />
-        
+
         {/* 📄 Main Content - Semua Section (urut sesuai navigasi) */}
         <main id="home">
           <Hero />                    {/* id="home" (default) */}
           <About />                   {/* id="about" */}
-          <Services />                {/* id="services" */}
+          <Services services={services} />                {/* id="services" */}
           <WhyChooseUs />             {/* id="why-us" ✅ TAMBAHKAN INI */}
-          <VehicleCatalog />          {/* id="armada" ✅ TAMBAHKAN INI */}
-          <Portfolio />               {/* id="portfolio" */}
-          <Testimonials />            {/* id="testimonials" */}
-          <Blog />                    {/* id="blog" */}
+          <VehicleCatalog vehicles={vehicles} />          {/* id="armada" ✅ TAMBAHKAN INI */}
+          <Portfolio clients={clients} projects={projects} />               {/* id="portfolio" */}
+          <Testimonials testimonials={testimonials} />            {/* id="testimonials" */}
+          <Blog posts={posts} />                    {/* id="blog" */}
           <Contact />                 {/* id="contact" */}
         </main>
-        
+
         {/* 🦶 Footer */}
         <Footer />
-        
+
         {/* 💬 Floating WhatsApp Button */}
         <WhatsAppButton />
       </div>

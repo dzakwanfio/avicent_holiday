@@ -30,6 +30,36 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('admin.services.index')}
+                                    active={route().current('admin.services.*')}
+                                >
+                                    Layanan
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.vehicles.index')}
+                                    active={route().current('admin.vehicles.*')}
+                                >
+                                    Armada
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.projects.index')}
+                                    active={route().current('admin.projects.*')}
+                                >
+                                    Portofolio
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.testimonials.index')}
+                                    active={route().current('admin.testimonials.*')}
+                                >
+                                    Testimoni
+                                </NavLink>
+                                <NavLink
+                                    href={route('admin.posts.index')}
+                                    active={route().current('admin.posts.*')}
+                                >
+                                    Berita
+                                </NavLink>
                             </div>
                         </div>
 
@@ -133,6 +163,36 @@ export default function AuthenticatedLayout({ header, children }) {
                             active={route().current('dashboard')}
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.services.index')}
+                            active={route().current('admin.services.*')}
+                        >
+                            Layanan
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.vehicles.index')}
+                            active={route().current('admin.vehicles.*')}
+                        >
+                            Armada
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.projects.index')}
+                            active={route().current('admin.projects.*')}
+                        >
+                            Portofolio
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.testimonials.index')}
+                            active={route().current('admin.testimonials.*')}
+                        >
+                            Testimoni
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('admin.posts.index')}
+                            active={route().current('admin.posts.*')}
+                        >
+                            Berita
                         </ResponsiveNavLink>
                     </div>
 

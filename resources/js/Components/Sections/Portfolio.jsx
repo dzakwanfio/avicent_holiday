@@ -1,20 +1,8 @@
 import { motion } from 'motion/react';
 
-export default function Portfolio() {
-  const clients = [
-    { name: "Client 1", logo: "https://picsum.photos/seed/client1/200/100" },
-    { name: "Client 2", logo: "https://picsum.photos/seed/client2/200/100" },
-    { name: "Client 3", logo: "https://picsum.photos/seed/client3/200/100" },
-    { name: "Client 4", logo: "https://picsum.photos/seed/client4/200/100" },
-    { name: "Client 5", logo: "https://picsum.photos/seed/client5/200/100" },
-    { name: "Client 6", logo: "https://picsum.photos/seed/client6/200/100" },
-  ];
-
-  const projects = [
-    { title: "Tour Bali 2023", category: "Paket Wisata", image: "https://picsum.photos/seed/bali/600/400" },
-    { title: "Gathering Bank Mandiri", category: "Corporate Outing", image: "https://picsum.photos/seed/gathering/600/400" },
-    { title: "Study Tour SMA 1", category: "Sewa Bus", image: "https://picsum.photos/seed/school/600/400" },
-  ];
+export default function Portfolio({ clients, projects }) {
+  const displayClients = clients || [];
+  const displayProjects = projects || [];
 
   return (
     <section id="portfolio" className="py-24 bg-white relative">
@@ -27,7 +15,7 @@ export default function Portfolio() {
 
         {/* Client Logos */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-24">
-          {clients.map((client, index) => (
+          {displayClients.map((client, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
@@ -43,14 +31,14 @@ export default function Portfolio() {
 
         {/* Recent Projects */}
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-3xl shadow-lg"
+              className="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
             >
               <img src={project.image} alt={project.title} className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">

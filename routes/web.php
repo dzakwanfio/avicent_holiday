@@ -9,8 +9,12 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'services' => \App\Models\Service::all(),
+        'vehicles' => \App\Models\Vehicle::where('is_active', true)->get(),
+        'clients' => \App\Models\Client::all(),
+        'projects' => \App\Models\Project::all(),
+        'testimonials' => \App\Models\Testimonial::all(),
+        'posts' => \App\Models\Post::where('is_published', true)->latest()->take(3)->get(),
     ]);
 });
 
@@ -22,6 +26,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Admin Management Routes
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
+        Route::resource('vehicles', \App\Http\Controllers\Admin\VehicleController::class);
+        Route::resource('clients', \App\Http\Controllers\Admin\ClientController::class);
+        Route::resource('projects', \App\Http\Controllers\Admin\ProjectController::class);
+        Route::resource('testimonials', \App\Http\Controllers\Admin\TestimonialController::class);
+        Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+    });
 });
 
 require __DIR__.'/auth.php';
