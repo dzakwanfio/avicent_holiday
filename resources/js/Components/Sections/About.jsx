@@ -61,9 +61,9 @@ export default function About() {
           {/* LEFT COLUMN */}
           <motion.div
             className="grid gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
             {/* Profil Perusahaan */}
@@ -117,9 +117,9 @@ export default function About() {
 
           {/* RIGHT COLUMN */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
             className="self-start"
           >
