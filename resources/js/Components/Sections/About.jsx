@@ -206,7 +206,7 @@ export default function About() {
                     <h4 className="text-base font-bold mb-2 text-white">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-white/65 leading-relaxed">
+                    <p className="text-sm text-white/65 leading-relaxed text-justify">
                       {item.description}
                     </p>
                   </div>

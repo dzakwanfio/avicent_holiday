@@ -25,7 +25,7 @@ export default function Hero() {
             <span className="text-gold italic">Tanggung Jawab Kami</span>
           </h1>
           
-          <p className="text-lg text-navy/70 mb-10 max-w-lg leading-relaxed">
+          <p className="text-lg text-navy/70 mb-10 max-w-lg leading-relaxed text-justify">
             Agendakan perjalanan wisata impian Anda bersama Avicent Holiday. Kami menyediakan armada Big Bus JB5 & JB3+ terbaru untuk pengalaman perjalanan yang tak terlupakan.
           </p>
           
