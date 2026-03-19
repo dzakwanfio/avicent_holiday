@@ -1,23 +1,20 @@
 import { Head } from '@inertiajs/react';
 import { motion, useScroll, useSpring } from 'motion/react';
 
-// ✅ Layout Components
 import Navbar from '@/Components/Layout/Navbar';
 import Footer from '@/Components/Layout/Footer';
 
-// ✅ Section Components (urut sesuai alur halaman)
 import Hero from '@/Components/Sections/Hero';
 import About from '@/Components/Sections/About';
 import Services from '@/Components/Sections/Services';
-import WhyChooseUs from '@/Components/Sections/WhyChooseUs';      // ✅ Fix casing: WhyChooseus → WhyChooseUs
+import WhyChooseUs from '@/Components/Sections/WhyChooseUs';
 import VehicleCatalog from '@/Components/Sections/VehicleCatalog';
 import Portfolio from '@/Components/Sections/Portfolio';
 import Testimonials from '@/Components/Sections/Testimonials';
 import Blog from '@/Components/Sections/Blog';
 import Contact from '@/Components/Sections/Contact';
 
-// ✅ UI Components
-import WhatsAppButton from '@/Components/UI/WhatsAppbutton';      // ✅ Fix casing: Whatsappbutton → WhatsAppButton
+import WhatsAppButton from '@/Components/UI/WhatsAppbutton';
 
 export default function Welcome({ services, vehicles, clients, projects, testimonials, posts }) {
   // Progress bar scroll animation
