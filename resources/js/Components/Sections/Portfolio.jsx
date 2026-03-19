@@ -38,7 +38,7 @@ export default function Portfolio({ clients, projects }) {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              className="group relative overflow-hidden rounded-3xl shadow-lg"
             >
               <img src={project.image} alt={project.title} className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
