@@ -13,18 +13,18 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold via-gold-light to-gold" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
-
+      
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-
+        
         {/* Main Footer Content */}
         <div className="grid lg:grid-cols-12 gap-8 py-10">
-
+          
           {/* Column 1: Company Info (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <img
-                src="/images/logoavicent.jpg"
+              <img 
+                src="/images/logoavicent.jpg" 
                 alt="Avicent Holiday Logo"
                 className="h-14 w-auto object-contain"
                 onError={(e) => {
@@ -40,12 +40,12 @@ export default function Footer() {
                 <span className="text-xs tracking-[0.3em] text-gold font-medium">HOLIDAY</span>
               </div>
             </div>
-
+            
             <p className="text-white/70 text-sm leading-relaxed text-justify">
-              PT AVICENT INDO UTAMA - Penyedia jasa transportasi dan layanan tour pariwisata terpercaya di Madiun.
+              PT AVICENT INDO UTAMA - Penyedia jasa transportasi dan layanan tour pariwisata terpercaya di Madiun. 
               Armada modern, fasilitas lengkap, dan pelayanan profesional untuk pengalaman perjalanan yang berkesan.
             </p>
-
+            
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3">
               <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
@@ -72,8 +72,8 @@ export default function Footer() {
                 { name: 'Kontak', href: '#contact' },
               ].map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <a 
+                    href={link.href} 
                     className="text-sm text-white/70 hover:text-gold transition-colors duration-300 inline-block"
                   >
                     {link.name}
@@ -95,8 +95,8 @@ export default function Footer() {
                 'Acara Keluarga',
               ].map((service) => (
                 <li key={service}>
-                  <a
-                    href="#contact"
+                  <a 
+                    href="#contact" 
                     className="text-sm text-white/70 hover:text-gold transition-colors duration-300 inline-block"
                   >
                     {service}
@@ -130,9 +130,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-white/50 mb-1">Telepon / WhatsApp</p>
-                  <a
-                    href="https://wa.me/6285788889995"
-                    target="_blank"
+                  <a 
+                    href="https://wa.me/6285788889995" 
+                    target="_blank" 
                     rel="noopener noreferrer"
                     className="text-sm text-white/80 hover:text-gold transition-colors font-medium"
                   >
@@ -140,7 +140,23 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
-              
+
+              {/* Email */}
+              {/* <div className="flex items-start gap-3 group">
+                <div className="w-8 h-8 bg-gold/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
+                  <Mail size={16} className="text-gold" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/50 mb-1">Email</p>
+                  <a 
+                    href="mailto:info@avicentholiday.com" 
+                    className="text-sm text-white/80 hover:text-gold transition-colors"
+                  >
+                    info@avicentholiday.com
+                  </a>
+                </div>
+              </div> */}
+
               {/* Operating Hours */}
               <div className="flex items-start gap-3 pt-2 border-t border-white/10">
                 <div className="w-8 h-8 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
@@ -157,22 +173,22 @@ export default function Footer() {
             <div className="mt-4 pt-4 border-t border-white/10">
               <p className="text-xs text-white/50 mb-3">Ikuti Kami</p>
               <div className="flex gap-3">
-                <a
-                  href="https://instagram.com/avicentholiday"
-                  target="_blank"
+                <a 
+                  href="https://instagram.com/avicentholiday" 
+                  target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110"
                 >
                   <Instagram size={18} />
                 </a>
-                <a
-                  href="https://facebook.com/avicentholiday"
-                  target="_blank"
+                {/* <a 
+                  href="https://facebook.com/avicentholiday" 
+                  target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110"
                 >
                   <Facebook size={18} />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -189,8 +205,8 @@ export default function Footer() {
                 Avicent Holiday Madiun - Mitra Perjalanan Terpercaya
               </p>
             </div>
-
-            <button
+            
+            <button 
               onClick={scrollToTop}
               className="group w-12 h-12 bg-gold rounded-full flex items-center justify-center hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 hover:shadow-gold/40 hover:-translate-y-1"
               aria-label="Back to top"
