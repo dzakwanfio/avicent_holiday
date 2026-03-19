@@ -36,7 +36,8 @@ export default function Testimonials({ testimonials }) {
                 ))}
               </div>
 
-              <p className="text-navy/70 italic mb-8 leading-relaxed flex-1">
+              <p className="text-navy/70 italic mb-8 leading-relaxed text-justify">
+
                 "{testimonial.content}"
               </p>
 

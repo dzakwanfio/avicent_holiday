@@ -5,7 +5,7 @@ import { useState } from 'react';
 // 🎯 Mock Data (Nanti diganti dengan data dari backend)
 const mockContact = {
   whatsapp: '6285788889995',
-  address: 'Jl. Basuki Rahmad, rahmat, Kec. Kartoharjo, Kota Madiun, Jawa Timur 63119',
+  address: 'Jl. Basuki Rahmad, Madiun, Jawa Timur 63119',
   google_maps_embed:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1449.169742286128!2d111.532121349136!3d-7.610060663631086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bf33f6c73733%3A0x9ffb433be8c8b2ca!2sAvicent%20Holiday%20Transport%20Persewaan%20Bus%20dan%20Hiace!5e0!3m2!1sid!2sid!4v1773560857349!5m2!1sid!2sid",
 };
 

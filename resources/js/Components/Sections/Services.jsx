@@ -59,7 +59,7 @@ export default function Services({ services }) {
                   <IconComponent size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-4 tracking-tight group-hover:text-gold transition-colors">{service.title}</h3>
-                <p className="text-sm text-navy/60 mb-6 leading-relaxed flex-1">
+                <p className="text-sm text-navy/60 mb-6 leading-relaxed flex-1 text-justify">
                   {service.description}
                 </p>
                 <ul className="space-y-2 mb-8">
