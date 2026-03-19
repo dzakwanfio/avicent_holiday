@@ -10,7 +10,6 @@ export default function Edit({ post: blogPost }) {
         content: blogPost.content || '',
         featured_image: null,
         is_published: blogPost.is_published,
-        author: blogPost.author || 'Admin Avicent',
     });
 
     const submit = (e) => {
@@ -37,34 +36,20 @@ export default function Edit({ post: blogPost }) {
                 <div className="mx-auto max-w-5xl sm:px-6 lg:px-8">
                     <form onSubmit={submit} className="bg-white shadow-xl sm:rounded-3xl border border-navy/5 overflow-hidden">
                         <div className="p-8 space-y-8">
-                            {/* Title & Author */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div className="md:col-span-2 space-y-2">
-                                    <label className="text-sm font-bold text-navy uppercase tracking-wider">Judul Berita</label>
-                                    <input
-                                        type="text"
-                                        value={data.title}
-                                        onChange={e => setData('title', e.target.value)}
-                                        className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all font-bold text-lg"
-                                    />
-                                    {errors.title && <p className="text-xs text-red-500">{errors.title}</p>}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-navy uppercase tracking-wider">Penulis</label>
-                                    <input
-                                        type="text"
-                                        value={data.author}
-                                        onChange={e => setData('author', e.target.value)}
-                                        className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all"
-                                    />
-                                    {errors.author && <p className="text-xs text-red-500">{errors.author}</p>}
-                                </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Judul Berita</label>
+                                <input
+                                    type="text"
+                                    value={data.title}
+                                    onChange={e => setData('title', e.target.value)}
+                                    className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all font-bold text-lg"
+                                />
+                                {errors.title && <p className="text-xs text-red-500">{errors.title}</p>}
                             </div>
 
                             {/* Excerpt */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Ringkasan Singkat (Excerpt)</label>
+                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Ringkasan Singkat</label>
                                 <textarea
                                     value={data.excerpt}
                                     onChange={e => setData('excerpt', e.target.value)}
@@ -73,13 +58,15 @@ export default function Edit({ post: blogPost }) {
                                 {errors.excerpt && <p className="text-xs text-red-500">{errors.excerpt}</p>}
                             </div>
 
-                            {/* Main Content */}
+                            {/* Main Link */}
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Isi Berita Lengkap</label>
-                                <textarea
+                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Link Berita Utama</label>
+                                <input
+                                    type="url"
                                     value={data.content}
                                     onChange={e => setData('content', e.target.value)}
-                                    className="w-full bg-navy/5 border-none rounded-3xl p-6 focus:ring-2 focus:ring-gold transition-all min-h-[400px] leading-relaxed"
+                                    className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all"
+                                    placeholder="Tempel link berita di sini (Contoh: https://instagram.com/p/xxx)"
                                 />
                                 {errors.content && <p className="text-xs text-red-500">{errors.content}</p>}
                             </div>

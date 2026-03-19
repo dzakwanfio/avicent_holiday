@@ -32,8 +32,8 @@ export default function Index({ posts }) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="py-4">
-                        <div className="p-0">
+                    <div className="overflow-hidden bg-white shadow-xl sm:rounded-3xl border border-navy/5">
+                        <div className="p-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {posts.map((post) => (
                                     <div key={post.id} className="group flex flex-col bg-white border border-navy/5 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -55,10 +55,6 @@ export default function Index({ posts }) {
                                                 <div className="flex items-center gap-1">
                                                     <Calendar size={12} />
                                                     {new Date(post.published_at).toLocaleDateString('id-ID')}
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <User size={12} />
-                                                    {post.author}
                                                 </div>
                                             </div>
 
@@ -88,11 +84,12 @@ export default function Index({ posts }) {
                                                     </button>
                                                 </div>
                                                 <a
-                                                    href={`/blog/${post.slug}`}
+                                                    href={post.content}
                                                     target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="flex items-center gap-1 text-xs font-bold text-gold hover:underline"
                                                 >
-                                                    View Page
+                                                    Buka Link
                                                     <Eye size={14} />
                                                 </a>
                                             </div>

@@ -46,10 +46,6 @@ export default function Blog({ posts }) {
                   <Calendar size={12} />
                   {post.published_at ? new Date(post.published_at).toLocaleDateString('id-ID') : post.date}
                 </div>
-                <div className="flex items-center gap-1">
-                  <User size={12} />
-                  {post.author}
-                </div>
               </div>
 
               <h3 className="text-lg font-bold text-navy mb-4 group-hover:text-gold transition-colors duration-300 leading-tight flex-1">
@@ -60,10 +56,15 @@ export default function Blog({ posts }) {
                 {post.excerpt}
               </p>
 
-              <Link href={`/blog/${post.slug}`} className="flex items-center gap-2 text-gold font-bold text-sm group/link mt-auto">
+              <a
+                href={post.content}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gold font-bold text-sm group/link mt-auto"
+              >
                 Baca Selengkapnya
                 <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </motion.article>
           ))}
         </div>

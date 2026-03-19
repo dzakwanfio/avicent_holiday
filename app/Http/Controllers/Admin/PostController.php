@@ -34,10 +34,9 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'excerpt' => 'required|string|max:500',
-            'content' => 'required|string',
-            'featured_image' => 'required|image|max:2048',
+            'content' => 'required|string|max:1000',
+            'featured_image' => 'required|image|max:5000',
             'is_published' => 'boolean',
-            'author' => 'required|string|max:255',
         ]);
 
         $validated['slug'] = \Illuminate\Support\Str::slug($validated['title']) . '-' . uniqid();
@@ -81,10 +80,9 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'excerpt' => 'required|string|max:500',
-            'content' => 'required|string',
+            'content' => 'required|string|max:1000', // repurposed as Link
             'featured_image' => 'nullable',
             'is_published' => 'boolean',
-            'author' => 'required|string|max:255',
         ]);
 
         if ($request->hasFile('featured_image')) {
