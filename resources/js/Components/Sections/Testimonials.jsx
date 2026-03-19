@@ -24,7 +24,7 @@ export default function Testimonials({ testimonials }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-navy/5 relative group hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 rounded-3xl shadow-sm border border-navy/5 relative group hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col h-full"
             >
               <div className="absolute top-8 right-8 text-gold/10 group-hover:text-gold/20 transition-colors duration-300">
                 <Quote size={48} />
@@ -32,18 +32,23 @@ export default function Testimonials({ testimonials }) {
 
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-gold text-gold" />
+                  <Star key={i} size={14} className="fill-gold text-gold" />
                 ))}
               </div>
 
-              <p className="text-navy/70 italic mb-8 leading-relaxed">
+              <p className="text-navy/70 italic mb-8 leading-relaxed flex-1">
                 "{testimonial.content}"
               </p>
 
-              <div className="flex items-center gap-4">
-                <img src={testimonial.avatar || testimonial.image} alt={testimonial.customer_name || testimonial.name} className="w-12 h-12 rounded-full object-cover border-2 border-gold/20" referrerPolicy="no-referrer" />
+              <div className="flex items-center gap-4 mt-auto pt-6 border-t border-navy/5">
+                <img
+                  src={testimonial.avatar || testimonial.image || 'https://ui-avatars.com/api/?name=' + (testimonial.customer_name || testimonial.name)}
+                  alt={testimonial.customer_name || testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover border-2 border-gold/20 flex-shrink-0"
+                  referrerPolicy="no-referrer"
+                />
                 <div>
-                  <h4 className="text-sm font-bold text-navy">{testimonial.customer_name || testimonial.name}</h4>
+                  <h4 className="text-sm font-bold text-navy truncate max-w-[150px]">{testimonial.customer_name || testimonial.name}</h4>
                   <p className="text-[10px] text-navy/50 uppercase tracking-widest font-bold">{testimonial.role}</p>
                 </div>
               </div>
