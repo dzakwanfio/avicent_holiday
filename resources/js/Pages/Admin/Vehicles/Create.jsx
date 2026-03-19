@@ -2,6 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { ArrowLeft, Save, Upload, X } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 export default function Create() {
     const { data, setData, post, processing, errors } = useForm({
@@ -79,15 +80,41 @@ export default function Create() {
                                     <label className="text-sm font-bold text-navy uppercase tracking-wider">
                                         Tipe Kendaraan
                                     </label>
-                                    <select
-                                        value={data.type}
-                                        onChange={(e) => setData('type', e.target.value)}
-                                        className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all"
-                                    >
-                                        <option value="bus">Bus Pariwisata</option>
-                                        <option value="travel">Travel / Hiace</option>
-                                        <option value="luxury">Luxury Coach</option>
-                                    </select>
+                                    <div className="space-y-3">
+                                        <select
+                                            value={['bus', 'travel'].includes(data.type) ? data.type : 'other'}
+                                            onChange={(e) => {
+                                                const val = e.target.value;
+                                                if (val === 'other') {
+                                                    setData('type', '');
+                                                } else {
+                                                    setData('type', val);
+                                                }
+                                            }}
+                                            className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all"
+                                        >
+                                            <option value="bus">Bus Pariwisata</option>
+                                            <option value="travel">Travel / Hiace</option>
+                                            <option value="other">Tipe Lainnya...</option>
+                                        </select>
+
+                                        {!['bus', 'travel'].includes(data.type) && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: -10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                className="relative"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    value={data.type === 'other' ? '' : data.type}
+                                                    onChange={(e) => setData('type', e.target.value)}
+                                                    className="w-full bg-gold/5 border-2 border-gold/20 rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all placeholder:text-navy/30"
+                                                    placeholder="Ketik tipe armada (Contoh: Caravan, MPV...)"
+                                                    autoFocus
+                                                />
+                                            </motion.div>
+                                        )}
+                                    </div>
                                     {errors.type && (
                                         <p className="text-xs text-red-500">{errors.type}</p>
                                     )}

@@ -33,7 +33,7 @@ class VehicleController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'type' => 'required|in:bus,travel,luxury',
+            'type' => 'required|string|max:255',
             'seat_capacity' => 'required|integer',
             'facilities' => 'required|array',
             'photo' => 'nullable|image|max:2048',
