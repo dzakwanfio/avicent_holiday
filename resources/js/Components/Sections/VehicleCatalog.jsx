@@ -1,4 +1,3 @@
-// resources/js/Components/Sections/VehicleCatalog.jsx
 import { motion } from 'motion/react';
 import VehicleCard from '@/Components/UI/VehicleCard';
 import { mockVehicles } from '@/utils/mockData';
@@ -10,7 +9,7 @@ export default function VehicleCatalog({ vehicles }) {
     <section id="armada" className="py-24 bg-white relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* 📌 Header Section */}
+        {/* Header Section */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +28,7 @@ export default function VehicleCatalog({ vehicles }) {
           </p>
         </motion.div>
 
-        {/* 🚐 Grid Katalog */}
+        {/* Grid Katalog */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayVehicles.map((vehicle, index) => (
             <motion.div
@@ -44,7 +43,7 @@ export default function VehicleCatalog({ vehicles }) {
           ))}
         </div>
 
-        {/* 📞 CTA Button */}
+        {/* CTA Button */}
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0 }}

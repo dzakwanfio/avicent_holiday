@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class VehicleController extends Controller
 {
@@ -47,7 +48,9 @@ class VehicleController extends Controller
         }
 
         if ($request->hasFile('pdf_file')) {
-            $validated['pdf_file'] = '/storage/' . $request->file('pdf_file')->store('vehicles/pdfs', 'public');
+            $fileName = Str::slug($request->name) . ' - ' . now()->format('Y-m-d') . '.pdf';
+            $path = $request->file('pdf_file')->storeAs('vehicles/pdfs', $fileName, 'public');
+            $validated['pdf_file'] = '/storage/' . $path;
         }
 
         \App\Models\Vehicle::create($validated);
@@ -86,8 +89,8 @@ class VehicleController extends Controller
             'type' => 'required|string',
             'seat_capacity' => 'required|integer',
             'facilities' => 'required|array',
-            'photo' => 'nullable', // Can be file or string (path)
-            'pdf_file' => 'nullable', // Can be file or string (path)
+            'photo' => 'nullable', 
+            'pdf_file' => 'nullable', 
             'description' => 'required|string',
             'is_active' => 'boolean',
         ]);
@@ -99,7 +102,9 @@ class VehicleController extends Controller
         }
 
         if ($request->hasFile('pdf_file')) {
-            $validated['pdf_file'] = '/storage/' . $request->file('pdf_file')->store('vehicles/pdfs', 'public');
+            $fileName = Str::slug($request->name) . ' - ' . now()->format('Y-m-d') . '.pdf';
+            $path = $request->file('pdf_file')->storeAs('vehicles/pdfs', $fileName, 'public');
+            $validated['pdf_file'] = '/storage/' . $path;
         } else {
             unset($validated['pdf_file']);
         }

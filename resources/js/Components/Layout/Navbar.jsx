@@ -15,13 +15,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 📍 Kontak dari PDF
+  //Kontak dari PDF
   const contact = {
     whatsapp: '6285788889995',
     whatsappDisplay: '0857-8888-9995',
   };
 
-  // 🔗 Navigasi One-Page (anchor links)
+  // Navigasi One-Page (anchor links)
   const navLinks = [
     { name: 'Beranda', href: '#home' },
     { name: 'Tentang Kami', href: '#about' },
@@ -35,15 +35,14 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        
-        {/* ✅ LOGO AVICENT */}
+
+        {/* LOGO AVICENT */}
         <a href="#home" className="flex items-center gap-3 group">
-          <img 
-            src="/images/logoavicent.jpg" 
+          <img
+            src="/images/logoavicent.jpg"
             alt="Avicent Holiday Logo"
             className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
-              // Fallback: jika logo tidak ditemukan, tampilkan text
               e.target.style.display = 'none';
               e.target.nextSibling.style.display = 'flex';
             }}
@@ -62,23 +61,22 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Nav - SELALU TERLIHAT DENGAN WARNA NAVY */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-sm font-semibold text-navy hover:text-gold transition-colors duration-300"
             >
               {link.name}
             </a>
           ))}
-          
-          {/* Tombol WhatsApp */}
-          <a 
-            href={`https://wa.me/${contact.whatsapp}`} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+
+          {/* WhatsApp Button */}
+          <a
+            href={`https://wa.me/${contact.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-gold flex items-center gap-2 py-2 px-5 text-sm font-medium"
           >
             <Phone size={16} />
@@ -87,8 +85,8 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-navy p-2" 
+        <button
+          className="md:hidden text-navy p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -107,8 +105,8 @@ export default function Navbar() {
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
+                <a
+                  key={link.name}
                   href={link.href}
                   className="text-lg font-semibold text-navy hover:text-gold transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -116,10 +114,10 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a 
-                href={`https://wa.me/${contact.whatsapp}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={`https://wa.me/${contact.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-gold text-center font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

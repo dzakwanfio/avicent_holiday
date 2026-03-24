@@ -48,9 +48,7 @@ export default function Services({ services }) {
                   type: "spring",
                   stiffness: 300,
                   damping: 20,
-                  // entry animation delay
                   delay: index * 0.1,
-                  // allow hover to ignore the entry delay
                   y: { delay: 0, duration: 0.2 }
                 }}
                 className="bg-white border border-navy/5 p-8 rounded-3xl group flex flex-col cursor-pointer transition-colors duration-300"

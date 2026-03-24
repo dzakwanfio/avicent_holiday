@@ -14,36 +14,46 @@ export default function Portfolio({ clients, projects }) {
         </div>
 
         {/* Client Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-24">
-          {displayClients.map((client, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-24">
+          {displayClients.slice(0, 6).map((client, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center p-6 bg-navy/5 rounded-2xl grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center p-6 bg-navy/5 rounded-3xl grayscale hover:grayscale-0 transition-all duration-300 aspect-square group"
             >
-              <img src={client.logo} alt={client.name} className="max-h-12 w-auto object-contain" referrerPolicy="no-referrer" />
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-h-16 max-w-[80%] object-contain group-hover:scale-110 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
           ))}
         </div>
 
         {/* Recent Projects */}
         <div className="grid md:grid-cols-3 gap-8">
-          {displayProjects.map((project, index) => (
+          {displayProjects.slice(0, 3).map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-3xl shadow-lg"
+              className="group relative overflow-hidden rounded-[2.5rem] shadow-lg aspect-square"
             >
-              <img src={project.image} alt={project.title} className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2">{project.category}</span>
-                <h4 className="text-white text-xl font-bold">{project.title}</h4>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy via-navy/40 to-transparent p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="text-gold text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">{project.category}</span>
+                <h4 className="text-white text-xl font-bold leading-tight">{project.title}</h4>
               </div>
             </motion.div>
           ))}

@@ -21,7 +21,6 @@ export default function Footer() {
           
           {/* Column 1: Company Info (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Logo */}
             <div className="flex items-center gap-3">
               <img 
                 src="/images/logoavicent.jpg" 
@@ -59,7 +58,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (2 cols) */}
+          {/* Column 2: Quick Links */}
           <div className="lg:col-span-2">
             <h4 className="font-bold text-lg mb-4 text-gold">Tautan</h4>
             <ul className="space-y-2">
@@ -83,7 +82,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services (3 cols) */}
+          {/* Column 3: Services */}
           <div className="lg:col-span-3">
             <h4 className="font-bold text-lg mb-4 text-gold">Layanan Kami</h4>
             <ul className="space-y-2">
@@ -106,7 +105,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Info (3 cols) */}
+          {/* Column 4: Contact Info */}
           <div className="lg:col-span-3">
             <h4 className="font-bold text-lg mb-4 text-gold">Hubungi Kami</h4>
             <div className="space-y-3">
