@@ -1,15 +1,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Plus, Edit, Trash2, Users, Bus, FileText } from 'lucide-react';
+import { Plus, Edit, Trash2, Users, Bus, FileText, CheckCircle, XCircle } from 'lucide-react';
 
 export default function Index({ vehicles }) {
     const { delete: destroy } = useForm();
-
-    const typeLabel = {
-        bus: 'Bus Pariwisata',
-        travel: 'Travel / Hiace',
-        luxury: 'Luxury Coach',
-    };
 
     const deleteVehicle = (id) => {
         if (confirm('Apakah Anda yakin ingin menghapus armada ini?')) {
@@ -38,14 +32,11 @@ export default function Index({ vehicles }) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="py-4">
-                        <div className="p-0">
+                    <div className="overflow-hidden bg-white shadow-xl sm:rounded-3xl border border-navy/5">
+                        <div className="p-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {vehicles.map((vehicle) => (
-                                    <div
-                                        key={vehicle.id}
-                                        className="group flex flex-col bg-white border border-navy/5 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500"
-                                    >
+                                    <div key={vehicle.id} className="group flex flex-col bg-white border border-navy/5 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                                         <div className="relative aspect-[16/9] overflow-hidden bg-navy/5">
                                             {vehicle.photo ? (
                                                 <img
@@ -58,20 +49,12 @@ export default function Index({ vehicles }) {
                                                     <Bus size={64} />
                                                 </div>
                                             )}
-
                                             <div className="absolute top-4 left-4 flex gap-2">
-                                                <span
-                                                    className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                                                        vehicle.is_active
-                                                            ? 'bg-green-100 text-green-600'
-                                                            : 'bg-red-100 text-red-600'
-                                                    }`}
-                                                >
+                                                <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${vehicle.is_active ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'}`}>
                                                     {vehicle.is_active ? 'Aktif' : 'Non-Aktif'}
                                                 </span>
-
                                                 <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold text-navy uppercase tracking-wider shadow-sm">
-                                                    {typeLabel[vehicle.type] || vehicle.type}
+                                                    {vehicle.type}
                                                 </span>
                                             </div>
                                         </div>
@@ -79,9 +62,7 @@ export default function Index({ vehicles }) {
                                         <div className="p-6 flex flex-col flex-1">
                                             <div className="flex items-center gap-2 text-gold mb-2">
                                                 <Users size={16} />
-                                                <span className="text-xs font-bold uppercase tracking-widest">
-                                                    {vehicle.seat_capacity} Kursi
-                                                </span>
+                                                <span className="text-xs font-bold uppercase tracking-widest">{vehicle.seat_capacity} Kursi</span>
                                             </div>
 
                                             <h3 className="text-lg font-bold text-navy mb-3 group-hover:text-gold transition-colors">
@@ -89,16 +70,11 @@ export default function Index({ vehicles }) {
                                             </h3>
 
                                             <div className="flex flex-wrap gap-2 mb-6">
-                                                {vehicle.facilities &&
-                                                    vehicle.facilities.slice(0, 3).map((facility, fIndex) => (
-                                                        <span
-                                                            key={fIndex}
-                                                            className="px-2 py-1 bg-navy/5 text-navy/60 text-[10px] rounded-lg"
-                                                        >
-                                                            {facility}
-                                                        </span>
-                                                    ))}
-
+                                                {vehicle.facilities && vehicle.facilities.slice(0, 3).map((facility, fIndex) => (
+                                                    <span key={fIndex} className="px-2 py-1 bg-navy/5 text-navy/60 text-[10px] rounded-lg">
+                                                        {facility}
+                                                    </span>
+                                                ))}
                                                 {vehicle.facilities && vehicle.facilities.length > 3 && (
                                                     <span className="px-2 py-1 bg-navy/5 text-navy/60 text-[10px] rounded-lg">
                                                         +{vehicle.facilities.length - 3}
@@ -115,7 +91,6 @@ export default function Index({ vehicles }) {
                                                     >
                                                         <Edit size={18} />
                                                     </Link>
-
                                                     <button
                                                         onClick={() => deleteVehicle(vehicle.id)}
                                                         className="p-2 text-navy/40 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all"
@@ -129,7 +104,6 @@ export default function Index({ vehicles }) {
                                                     <a
                                                         href={vehicle.pdf_file}
                                                         target="_blank"
-                                                        rel="noopener noreferrer"
                                                         className="flex items-center gap-1 text-xs font-bold text-navy/40 hover:text-navy transition-colors"
                                                     >
                                                         <FileText size={14} />
@@ -147,9 +121,7 @@ export default function Index({ vehicles }) {
                                             <Bus size={40} />
                                         </div>
                                         <h3 className="text-lg font-bold text-navy">Belum ada armada</h3>
-                                        <p className="text-navy/40 mt-1">
-                                            Mulai tambahkan kendaraan pertama Anda.
-                                        </p>
+                                        <p className="text-navy/40 mt-1">Mulai tambahkan kendaraan pertama Anda.</p>
                                     </div>
                                 )}
                             </div>

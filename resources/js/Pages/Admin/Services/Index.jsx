@@ -40,8 +40,8 @@ export default function Index({ services }) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="py-4">
-                        <div className="p-0">
+                    <div className="overflow-hidden bg-white shadow-xl sm:rounded-3xl border border-navy/5">
+                        <div className="p-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                                 {services.map((service) => {
                                     const IconComponent = IconMap[service.icon] || Cog;

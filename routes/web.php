@@ -10,11 +10,11 @@ Route::get('/', function () {
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'services' => \App\Models\Service::all(),
-        'vehicles' => \App\Models\Vehicle::where('is_active', true)->get(),
-        'clients' => \App\Models\Client::all(),
-        'projects' => \App\Models\Project::all(),
-        'testimonials' => \App\Models\Testimonial::all(),
-        'posts' => \App\Models\Post::where('is_published', true)->latest()->take(3)->get(),
+        'vehicles' => \App\Models\Vehicle::where('is_active', true)->latest()->get(),
+        'clients' => \App\Models\Client::latest()->take(6)->get(),
+        'projects' => \App\Models\Project::latest()->take(3)->get(),
+        'testimonials' => \App\Models\Testimonial::latest()->get(),
+        'posts' => \App\Models\Post::where('is_published', true)->latest()->get(),
     ]);
 });
 
