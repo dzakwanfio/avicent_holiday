@@ -95,6 +95,7 @@ export default function Testimonials({ testimonials }) {
                       alt={testimonial.customer_name || testimonial.name}
                       className="w-12 h-12 rounded-full object-cover border-2 border-gold/20 flex-shrink-0"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                     />
                     <div>
                       <h4 className="text-sm font-bold text-navy truncate max-w-[150px]">{testimonial.customer_name || testimonial.name}</h4>

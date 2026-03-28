@@ -29,6 +29,7 @@ export default function Portfolio({ clients, projects }) {
                 alt={client.name}
                 className="max-h-16 max-w-[80%] object-contain group-hover:scale-110 transition-transform duration-300"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </motion.div>
           ))}
@@ -50,6 +51,7 @@ export default function Portfolio({ clients, projects }) {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy via-navy/40 to-transparent p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="text-gold text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">{project.category}</span>
