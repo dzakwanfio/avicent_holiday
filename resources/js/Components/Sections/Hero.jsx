@@ -5,7 +5,6 @@ import { Link } from '@inertiajs/react';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
-      {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 transform translate-x-20 hidden lg:block" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 

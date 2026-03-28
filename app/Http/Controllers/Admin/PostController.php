@@ -80,7 +80,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'excerpt' => 'required|string|max:500',
-            'content' => 'required|string|max:1000', // repurposed as Link
+            'content' => 'required|string|max:1000', 
             'featured_image' => 'nullable',
             'is_published' => 'boolean',
         ]);

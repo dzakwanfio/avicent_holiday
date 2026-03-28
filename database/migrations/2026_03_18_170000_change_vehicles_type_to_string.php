@@ -13,7 +13,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            // Change from ENUM to string (varchar 255)
             $table->string('type')->default('bus')->change();
         });
     }
@@ -24,7 +23,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('vehicles', function (Blueprint $table) {
-            // Revert to ENUM if needed, but string is more flexible
             $table->enum('type', ['bus', 'travel'])->default('bus')->change();
         });
     }
