@@ -62,7 +62,7 @@ export default function Hero() {
         >
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
             <img 
-              src="/images/IMG_5798.JPG" 
+              src="/images/SND_7137.jpeg" 
               alt="Avicent Holiday Bus" 
               className="w-full h-auto object-cover"
             />

@@ -33,19 +33,19 @@ export default function Create() {
                     <form onSubmit={submit} className="bg-white shadow-xl sm:rounded-3xl border border-navy/5 overflow-hidden">
                         <div className="p-8 space-y-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Nama Perusahaan / Instansi</label>
+                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Nama Kegiatan</label>
                                 <input
                                     type="text"
                                     value={data.name}
                                     onChange={e => setData('name', e.target.value)}
                                     className="w-full bg-navy/5 border-none rounded-2xl p-4 focus:ring-2 focus:ring-gold transition-all"
-                                    placeholder="Contoh: PT. Maju Bersama"
+                                    placeholder=""
                                 />
                                 {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
                             </div>
 
                             <div className="space-y-4">
-                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Logo Klien</label>
+                                <label className="text-sm font-bold text-navy uppercase tracking-wider">Gambar Kegiatan</label>
                                 <div className="relative border-2 border-dashed border-navy/10 rounded-3xl p-12 text-center hover:border-gold/50 transition-colors group cursor-pointer">
                                     <input
                                         type="file"
@@ -55,7 +55,7 @@ export default function Create() {
                                     />
                                     <Upload className="mx-auto mb-4 text-navy/20 group-hover:text-gold transition-colors" size={40} />
                                     <p className="text-sm text-navy/60">
-                                        {data.logo ? data.logo.name : 'Klik untuk pilih logo (Max 1MB)'}
+                                        {data.logo ? data.logo.name : 'Klik untuk pilih gambar (Max 1MB)'}
                                     </p>
                                 </div>
                                 <p className="text-[10px] text-navy/30 text-center uppercase tracking-widest font-bold">Disarankan format PNG Transparan</p>
