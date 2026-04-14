@@ -46,7 +46,7 @@ export default function Welcome({ services, vehicles, clients, projects, testimo
           <Services services={services} />                {/* id="services" */}
           <WhyChooseUs />             {/* id="why-us" ✅ TAMBAHKAN INI */}
           <VehicleCatalog vehicles={vehicles} />          {/* id="armada" ✅ TAMBAHKAN INI */}
-          <Portfolio clients={clients} projects={projects} />               {/* id="portfolio" */}
+          <Portfolio projects={projects} />               {/* id="portfolio" */}
           <Testimonials testimonials={testimonials} />            {/* id="testimonials" */}
           <Blog posts={posts} />                    {/* id="blog" */}
           <Contact />                 {/* id="contact" */}

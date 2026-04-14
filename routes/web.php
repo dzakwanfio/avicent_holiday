@@ -12,7 +12,7 @@ Route::get('/', function () {
         'services' => \App\Models\Service::all(),
         'vehicles' => \App\Models\Vehicle::where('is_active', true)->latest()->get(),
         'clients' => \App\Models\Client::latest()->take(6)->get(),
-        'projects' => \App\Models\Project::latest()->take(3)->get(),
+        'projects' => \App\Models\Project::latest()->get(),
         'testimonials' => \App\Models\Testimonial::latest()->get(),
         'posts' => \App\Models\Post::where('is_published', true)->latest()->get(),
     ]);
