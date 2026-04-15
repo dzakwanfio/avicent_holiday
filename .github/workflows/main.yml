@@ -31,13 +31,13 @@ jobs:
           npm install
           npm run build
 
-      - name: 📂 Sync files to cPanel via FTP
+            - name: 📂 Sync files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /avicent_production/ # Pastikan folder ini sudah ada di cPanel
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
@@ -46,4 +46,4 @@ jobs:
             tests/**
             phpunit.xml
             README.md
-            .github/**
+            .github/**  
